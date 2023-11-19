@@ -5,51 +5,30 @@
 */
 
 #include <iostream>
-
 using namespace std;
-int main ()
-{
 
-  int n;
-  cin >> n;
-  int temp, digit, interesen, obraten = 0, brojac = 0, najgolem = 0;
-  for (int i = 1; i < n; i++)
-    {
-      temp = i;
-      obraten = 0;
-      brojac = 0;
-      while (temp != 0)
-	{
-	  digit = temp % 10;
-	  brojac++;
-	  obraten += digit;
-	  temp /= 10;
-	  if (temp == 0)
-	    {
-	      break;
-	    }
+int main() {
+    int n;
+    cin >> n;
 
-	  obraten = obraten * 10;
-	}
-      if (obraten % brojac == 0)
-	{
-	  interesen = i;
-	  if (interesen > najgolem)
-	    {
-	      najgolem = interesen;
-	    }
-	}
-      
-    }
-  if (n < 10)
-    {
-      cout << "Brojot ne e validen";
-    }
-  else
-    {
-      cout << najgolem;
+    int maxDelSum = 1;
+    int MaxDel = 1;
+
+    for (int i = 2; i < n; ++i) {
+        int sum = 1;
+        for (int j = 2; j <= i / 2; ++j) {
+            if (i % j == 0) {
+                sum += j;
+            }
+        }
+
+        if (sum > maxDelSum) {
+            maxDelSum = sum;
+            MaxDel = i;
+        }
     }
 
+    cout <<MaxDel<< endl;
 
-  return 0;
+    return 0;
 }
