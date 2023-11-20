@@ -31,6 +31,12 @@ int main()
             suma2+=cifri2;
             b/=10;
         }
-    cout<<suma1<<" Suma 1 "<<endl;
-    cout<<suma2<<" Suma 2 "<<endl;
+        if(suma1==suma2)
+        {
+            cout<<"Ista suma"<<endl;
+        }
+        else
+        {
+            cout<<"NE"<<endl;
+        }
 }
