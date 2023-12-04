@@ -14,25 +14,22 @@ int main() {
 
     int current_sum = arr[0];
     int max_sum = arr[0];
-    int start_index = 0, end_index = 0;
 
     for (int i = 1; i < N; ++i) {
         if (current_sum < 0) {
             current_sum = arr[i];
-            start_index = i;
         } else {
             current_sum += arr[i];
         }
 
         if (current_sum > max_sum) {
             max_sum = current_sum;
-            end_index = i;
         }
     }
 
     std::cout << "Maximum subarray sum: " << max_sum << std::endl;
 
-    double percentage = (double)(end_index - start_index + 1) / N * 100;
+    double percentage = (double)max_sum / N * 100;
     std::cout << "Percentage of elements in the subarray: " << percentage << "%" << std::endl;
 
     return 0;
