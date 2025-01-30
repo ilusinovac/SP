@@ -11,20 +11,35 @@ int main()
     {
         cin>>niza[i];
     }
-    int najmal = niza[0];
-    int najgolem = niza[0];
-    for (int i = 1; i < n; i++)
+    int najmal=niza[0];
+    int najgolem=niza[0];
+    int drug;
+
+    for(int i=1;i<n;i++)
     {
-        if (niza[i] < najmal)
+        if(niza[i]<najmal)
         {
-            najmal = niza[i];
-        }
-        if (niza[i] > najgolem)
-        {
-            najgolem = niza[i];
+            najmal=niza[i];
         }
     }
-
-    cout<<najmal<<endl;
-    cout<<najgolem<<endl;
+    for(int i=1;i<n;i++)
+    {
+        if(niza[i]>najgolem)
+        {
+            najgolem=niza[i];
+        }
+    }
+    for(int i=1;i<n;i++)
+    {
+        if(niza[i]<najgolem)
+        {
+            if(niza[i]>najmal)
+            {
+                drug=niza[i];
+            }
+        }
+    }
+    //cout<<najmal<<endl;
+    //  cout<<najgolem<<endl;
+    cout<<drug<<endl;
 }
